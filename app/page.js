@@ -80,7 +80,7 @@ export default function Home() {
   }
 
   return (
-   <main className=" w-[80%] md:w-[50%] lg:w-[45%] m-auto h-full ">
+   <main className=" w-[80%] md:w-[50%] lg:w-[45%] max-w-[500px] m-auto h-full mt-10">
     <Image src={"/logo-black.png"} alt="logo" width={100} height={50} className="m-auto"></Image>
      <Form {...form} >
       <form  className="grid gap-7 bg-neutral-100 my-5 py-10 px-20 shadow-md" onSubmit={form.handleSubmit(onSubmit)}>
