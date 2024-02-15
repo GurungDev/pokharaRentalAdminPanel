@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
@@ -13,17 +13,17 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useDispatch, useStore } from "react-redux";
- 
+
 const Navbar = () => {
   const links = [
-    { path: "/admin/dashboard", name: "DashBoard", logo: <RiDashboard3Fill/> },
-    { path: "/admin/users", name: "Users", logo: <HiUsers/> },
-    { path: "/admin/stores", name: "Stores", logo: <LiaStoreSolid/> },
-    { path: "/admin/orders", name: "Orders", logo: <MdPayments/> },
+    { path: "/admin/dashboard", name: "DashBoard", logo: <RiDashboard3Fill /> },
+    { path: "/admin/users", name: "Users", logo: <HiUsers /> },
+    { path: "/admin/stores", name: "Stores", logo: <LiaStoreSolid /> },
+    { path: "/admin/orders", name: "Orders", logo: <MdPayments /> },
   ];
   const [isOpen, setIsOpen] = useState(false);
   const { push } = useRouter();
-  const pathname = usePathname()
+  const pathname = usePathname();
   const dispatch = useDispatch();
   const store = useStore();
 
@@ -39,16 +39,22 @@ const Navbar = () => {
           onClick={toggleDrawer}
           className="hover:rotate-180 duration-300"
         >
-          <FaBars className="text-white text-2xl"/>          
+          <FaBars className="text-white text-2xl" />
         </button>
         <Drawer open={isOpen} direction="left" size={300} className="">
           <div className=" h-[100vh] bg-[#333] shadow ">
             <div className="w-[90%] m-auto text-neutral-200 py-8     text-center">
-              <h1 className="text-[1.5rem]  border-b-[2px] rounded border-blue-600 flex  ">
-                <Image src={"/logo.png"} alt="logo" width={50} height={50} className=""></Image>
+              <h1 className="text-[1.5rem]  border-b-[2px] rounded border-blue-600 flex items-center gap-5 ">
+                <Image
+                  src={"/logo.png"}
+                  alt="logo"
+                  width={50}
+                  height={50}
+                  className=""
+                ></Image>
                 <span>Pokhara Rentals</span>
               </h1>
-            
+
               <div className="grid gap-3 w-full mt-10">
                 {links.map((e, index) => {
                   return (
@@ -75,7 +81,7 @@ const Navbar = () => {
                 <button
                   onClick={() => {
                     dispatch(resetLogin());
-                    push("/")
+                    push("/");
                   }}
                   className="hover:border-blue-600 duration-500 hover:text-blue-600 border-[#333] border-b-[2px]  flex w-[45%]  gap-2 items-center justify-center  "
                 >
@@ -89,8 +95,15 @@ const Navbar = () => {
       </div>
       <div className="hidden nav my-auto mx-auto lg:block h-[100vh] bg-[#333] shadow w-[20vw] min-w-[250px] relative left-0">
         <div className="w-[90%] m-auto text-neutral-200 py-8     text-center">
-          <h1 className="text-[1.5rem]  border-b-[2px] rounded border-blue-600  ">
-            Pokhara Rentals
+          <h1 className="text-[1.5rem]  border-b-[2px] rounded border-blue-600 flex items-center gap-5 ">
+            <Image
+              src={"/logo.png"}
+              alt="logo"
+              width={50}
+              height={50}
+              className=""
+            ></Image>
+            <span>Pokhara Rentals</span>
           </h1>
 
           <div className="grid gap-3 w-full mt-10">
@@ -113,7 +126,7 @@ const Navbar = () => {
             <button
               onClick={() => {
                 dispatch(resetLogin());
-                push("/")
+                push("/");
               }}
               className="hover:border-blue-600 duration-500 hover:text-blue-600 border-[#333] border-b-[2px]  flex w-[35%]  gap-2 items-center justify-center  "
             >
