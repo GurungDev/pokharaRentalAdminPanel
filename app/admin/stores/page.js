@@ -46,14 +46,7 @@ function Stores() {
       minWidth: 150,
       maxWidth: 250,
     },
-
-    {
-      field: "location",
-      headerName: "location",
-      flex: 1,
-      minWidth: 150,
-      maxWidth: 250,
-    },
+ 
 
     {
       field: "ownerName",
@@ -107,43 +100,12 @@ function Stores() {
       },
     },
 
-    // {
-    //     field: "actions",
-    //     headerName: "",
-    //     type: "actions",
-    //     renderCell: (params) => {
-    //       const data = params.id;
-    //       const update = async () => {
-    //         try {
-    //           const store = await approveStore(data );
-    //           setChanged(!rowChanged);
-    //           toast({
-    //             title: "Approved",
-    //           });
-    //         } catch (error) {
-    //           toast({
-    //             title: "Failed",
-
-    //           });
-    //         }
-    //       };
-    //       return (
-    //         <Box
-    //           onClick={() => {
-    //               update();
-    //           }}
-    //           className="btn bg-blue-600 text-white py-2 px-5 rounded"
-    //         >
-    //           Approve
-    //         </Box>
-    //       );
-    //     },
-    //   },
+   
   ];
 
   return (
     <div className="">
-      <div className="layout">
+      <div className="layout py-10">
         <div className="m-0 m-auto border-b-2">
           <h1 className="text-[1.5rem] text-neutral-800">Store Details</h1>
           <h2 className="text-[.8rem] pb-6 text-neutral-600">

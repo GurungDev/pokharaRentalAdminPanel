@@ -19,8 +19,7 @@ const Navbar = () => {
     { path: "/admin/dashboard", name: "DashBoard", logo: <RiDashboard3Fill /> },
     { path: "/admin/users", name: "Users", logo: <HiUsers /> },
     { path: "/admin/stores", name: "Stores", logo: <LiaStoreSolid /> },
-    { path: "/admin/orders", name: "Orders", logo: <MdPayments /> },
-  ];
+   ];
   const [isOpen, setIsOpen] = useState(false);
   const { push } = useRouter();
   const pathname = usePathname();

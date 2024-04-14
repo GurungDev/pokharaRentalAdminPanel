@@ -96,7 +96,7 @@ import withAuth from "@/components/authMiddleware";
 
   return (
     <div className="">
-      <div className="layout">
+      <div className="layout py-10">
         <div className="m-0 m-auto border-b-2">
           <h1 className="text-[1.5rem] text-neutral-800">User Details</h1>
           <h2 className="text-[.8rem] pb-6 text-neutral-600">

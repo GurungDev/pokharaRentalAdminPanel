@@ -28,3 +28,14 @@ export const getStoreCount = async ()=> {
     const res = await http.get(`/admin/store/number`)
     return res?.data;
 }
+
+export const getStoreAnalysis = async ()=> {
+    const res = await http.get(`/admin/store/analysis/graph`)
+    return res?.data;
+}
+
+
+export const getStoreSalesAnalysis = async (data)=> {
+    const res = await http.get(`/admin/store/analysis/sales`, {params: data})
+    return res?.data;
+}
