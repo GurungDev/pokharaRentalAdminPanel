@@ -44,12 +44,14 @@ function Dashoard() {
           }
 
           groupedData[storeId].sales += parseInt(item.sales, 10);
+
         });
         let finalData = Object.values(groupedData);
-
+       
         let paymentData = [["Store Name", "Sales"]];
         finalData?.forEach((element) => {
-          paymentData.push([element?.store_name, element?.sales]);
+          console.log( element?.sales - (element?.sales / 10))
+          paymentData.push([element?.store_name, element?.sales - (element?.sales / 10)]);
         });
         setsalesData(paymentData);
         let data = [["Date", "Store joined"]];
@@ -72,7 +74,8 @@ function Dashoard() {
     };
 
     fetchData();
-  }, [month, year]); // Re-fetch data when selectedMonth changes
+  }, [month, year]);
+
   const handlePrevMonth = () => {
     if (month === 1) {
       setMonth(12);
@@ -81,7 +84,23 @@ function Dashoard() {
       setMonth(month - 1);
     }
   };
-
+  const getMonthName = (month) => {
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    return monthNames[month - 1] || "";
+  };
   const handleNextMonth = () => {
     if (month === 12) {
       setMonth(1);
@@ -147,10 +166,11 @@ function Dashoard() {
             <div className="flex justify-between">
               <div>
                 <h1 className="text-[1.5rem] text-neutral-800">
-                  Sales Details
+                  Revenues Details
                 </h1>
                 <h2 className="text-[.8rem] pb-6 text-neutral-600">
-                  Sales of the store.
+                  Total Revenues of store in the month : {getMonthName(month)} /{" "}
+                  {year}
                 </h2>
               </div>
 
@@ -203,7 +223,9 @@ function Dashoard() {
         {StoreData.length > 1 && (
           <div className="w-full py-5">
             <div>
-              <h1 className="text-[1.5rem] text-neutral-800">Store Joined Details</h1>
+              <h1 className="text-[1.5rem] text-neutral-800">
+                Store Joined Details
+              </h1>
               <h2 className="text-[.8rem] pb-6 text-neutral-600">
                 Store Connected to the system.
               </h2>
